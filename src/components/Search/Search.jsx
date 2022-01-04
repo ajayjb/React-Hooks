@@ -14,6 +14,7 @@ export default function Search() {
       });
       setResult(data.query.search);
     };
+<<<<<<< HEAD
     console.log("I will run first");
     // if (term && !result.length) {
     //   request();
@@ -27,6 +28,19 @@ export default function Search() {
       console.log("I run second");
     };
     // }
+=======
+    if (term && !result.length) {
+      request();
+    } else {
+      let timeId;
+      if (term) {
+        timeId = setTimeout(request, 350);
+      }
+      return () => {
+        clearTimeout(timeId);
+      };
+    }
+>>>>>>> feature-in-progress
   }, [term]);
 
   const list = result.map((e) => {
